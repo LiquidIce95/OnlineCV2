@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/dave/.nuget/packages/": {}
+    "/home/david/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dave/github_repos/OnlineCV2/Dotnet_backend_simple_example/MyWebApp/MyWebApp.csproj",
+      "projectUniqueName": "/home/david/Insync/davidsanchez062@gmail.com/Google Drive/Linux/Projects/Online_CV2/Dotnet_backend_simple_example/MyWebApp/MyWebApp.csproj",
       "projectName": "MyWebApp",
-      "projectPath": "/home/dave/github_repos/OnlineCV2/Dotnet_backend_simple_example/MyWebApp/MyWebApp.csproj",
-      "packagesPath": "/home/dave/.nuget/packages/",
-      "outputPath": "/home/dave/github_repos/OnlineCV2/Dotnet_backend_simple_example/MyWebApp/obj/",
+      "projectPath": "/home/david/Insync/davidsanchez062@gmail.com/Google Drive/Linux/Projects/Online_CV2/Dotnet_backend_simple_example/MyWebApp/MyWebApp.csproj",
+      "packagesPath": "/home/david/.nuget/packages/",
+      "outputPath": "/home/david/Insync/davidsanchez062@gmail.com/Google Drive/Linux/Projects/Online_CV2/Dotnet_backend_simple_example/MyWebApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/dave/.nuget/NuGet/NuGet.Config"
+        "/home/david/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
