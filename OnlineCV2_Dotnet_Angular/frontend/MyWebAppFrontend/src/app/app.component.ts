@@ -17,7 +17,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     // title for the  Online CV
-    const title : HTMLElement = this.renderer.createElement('div');
+    const title : HTMLElement = this.renderer.createElement('title');
     this.renderer.setProperty(title, 'innerHTML', 'Curriculum Vitae');
     this.renderer.addClass(title, 'title');
     this.renderer.appendChild(document.body, title);
@@ -25,7 +25,7 @@ export class AppComponent implements AfterViewInit {
     this.renderer.setStyle(title, 'fontSize', `${this.title_fontsize}vh`);
     
     // icon which can be clickd to show CV body
-    const icon : HTMLElement = this.renderer.createElement('div');
+    const icon : HTMLElement = this.renderer.createElement('title_icon');
     this.renderer.setProperty(icon, 'innerHTML', '&#9776;');
     this.renderer.addClass(icon, 'icon');
     this.renderer.appendChild(document.body, icon);
