@@ -45,7 +45,7 @@ body {
   .CV_body {
     background-color: rgb(202, 204, 180);
     width: 60vw;
-    height: 10vh;
+    height: 40vh;
     position: absolute;
     z-index: 2;
     display: none;

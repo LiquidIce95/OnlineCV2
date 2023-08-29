@@ -4,6 +4,7 @@ function Pers_Inf(AppComponent : any, document : any): HTMLElement{
     const Pers_Inf_Body : HTMLElement = AppComponent.renderer.createElement('div');
     AppComponent.renderer.addClass(Pers_Inf_Body, 'CV_body_text_fields');
     AppComponent.renderer.setProperty(Pers_Inf_Body,'innerHTML','Personal Information');
+    
 
 
     return Pers_Inf_Body;
@@ -49,7 +50,7 @@ function body(AppComponent: any, document : any) : HTMLElement{
     const CV_body : HTMLElement = AppComponent.renderer.createElement('CV_Body');
     AppComponent.renderer.addClass(CV_body, 'CV_body');
     AppComponent.renderer.appendChild(document.body, CV_body);
-    AppComponent.renderer.setStyle(CV_body, 'bottom', `${AppComponent.title_bottom - 10 }vh`);
+    AppComponent.renderer.setStyle(CV_body, 'bottom', `${AppComponent.title_bottom - 20 }vh`);
 
     const pers_inf : HTMLElement = Pers_Inf(AppComponent,document);
     const exp : HTMLElement = Pers_Inf(AppComponent,document);
