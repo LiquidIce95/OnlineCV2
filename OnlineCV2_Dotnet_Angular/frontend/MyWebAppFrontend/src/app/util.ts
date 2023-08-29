@@ -29,8 +29,7 @@ class Icon_button{
         this.Window = window;
         this.Document = document;
 
-        this.ParentBottom = 0;
-        this.px_to_vp('bottom',this.Parent);
+        this.ParentBottom = this.px_to_vp('bottom',this.Parent);
 
 
         // create the icon 
@@ -55,21 +54,21 @@ class Icon_button{
 
     }
 
-    px_to_vp(dir:string, ob : HTMLElement):void{
+    px_to_vp(dir:string, ob : HTMLElement): number{
         let style : CSSStyleDeclaration = window.getComputedStyle(ob);
         let bottomInPx: number = parseFloat(style.getPropertyValue(dir).replace('px', ''));
 
         // Convert to vw (if needed)
         let bottomInVw: number = (bottomInPx / window.innerWidth) * 100*2;
 
-        this.ParentBottom = bottomInVw;
+        return bottomInVw;
 
     }
 
     /*positons the Child correctly*/
     sizer(icon: HTMLElement, CV_body: HTMLElement) {
         // Convert to vw (if needed)
-        this.px_to_vp('bottom',this.Parent);
+        this.ParentBottom = this.px_to_vp('bottom',this.Parent);
 
         console.log(this.ParentBottom);
 
@@ -113,8 +112,36 @@ class Icon_button{
         }, 2000);
     }
 
-    
+    /*TODO: when the child is toggled, we need to shift the elements below the parent to make space 
+    for the child and when the child is toggled off, whe shrink the space again we ASSUME that
+    the elements are stored in the order of display which means at index 0 is the top element
+    space must be viewport height or width*/
+    shifter(mode : string, space : number){
+        if ( mode == 'space' ){
+            let grandpar = this.Parent.parentElement;
 
+            if(grandpar != null){
+                let index : number = 0;
+
+                for(let k : number = 0; k < grandpar.children.length; k++){
+                    if(grandpar.children[k] != this.Parent){
+                        index++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                index++;
+
+                for(let k : number = 0; grandpar.children.length; k++){
+                    
+                }
+            }
+
+            
+        }
+    }
 
 
 };
