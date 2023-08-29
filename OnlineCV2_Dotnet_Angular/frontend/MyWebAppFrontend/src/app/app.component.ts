@@ -1,23 +1,23 @@
 import { Component, Renderer2, AfterViewInit } from '@angular/core';
-
+import {body} from './cvbody'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-})
+})  
 export class AppComponent implements AfterViewInit {
-  title_fontsize = 10;
-  title_bottom = 80;
-  inSquare = false;
-  titleon = false;
-  inIcon = false;
+  title_fontsize : number = 10;
+  title_bottom : number= 80;
+  inSquare : boolean= false;
+  titleon : boolean= false;
+  inIcon : boolean = false;
 
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
     // title for the  Online CV
-    const title = this.renderer.createElement('div');
+    const title : HTMLElement = this.renderer.createElement('div');
     this.renderer.setProperty(title, 'innerHTML', 'Curriculum Vitae');
     this.renderer.addClass(title, 'title');
     this.renderer.appendChild(document.body, title);
@@ -25,44 +25,43 @@ export class AppComponent implements AfterViewInit {
     this.renderer.setStyle(title, 'fontSize', `${this.title_fontsize}vh`);
     
     // icon which can be clickd to show CV body
-    const icon = this.renderer.createElement('div');
-    this.renderer.addClass(icon, 'icon');
+    const icon : HTMLElement = this.renderer.createElement('div');
     this.renderer.setProperty(icon, 'innerHTML', '&#9776;');
+    this.renderer.addClass(icon, 'icon');
     this.renderer.appendChild(document.body, icon);
     this.renderer.setStyle(icon, 'bottom', `${this.title_bottom -10}vh`);
 
 
-    // background of the CV body
-    const rectangle = this.renderer.createElement('div');
-    this.renderer.addClass(rectangle, 'rectangle');
-    this.renderer.appendChild(document.body, rectangle);
-    this.renderer.setStyle(rectangle, 'bottom', `${this.title_bottom - 10 }vh`);
+    // background of the CV body, TODO: replace this with the CV_body object
+    const CV_body : HTMLElement = body(this,document);
 
+    this.sizer(icon, CV_body);
 
-    this.sizer(icon, rectangle);
+    window.addEventListener('load',() => this.sizer(icon, CV_body));
+    window.addEventListener('resize', () => this.sizer(icon,CV_body));
+    icon.addEventListener('click',()=> this.toggleSquare(CV_body,icon));
+    title.addEventListener('mouseover',()=> this.titleMouseOver(title,icon));
+    icon.addEventListener('mouseover', () => (this.inIcon = true));
+    icon.addEventListener('mouseout', () => this.iconMouseOut(icon));
+    title.addEventListener('mouseout', () => this.titleMouseOut(title, icon));
 
-    this.renderer.listen(window, 'load', () => this.sizer(icon, rectangle));
-    this.renderer.listen(window, 'resize', () => this.sizer(icon, rectangle));
-    this.renderer.listen(icon, 'click', () => this.toggleSquare(rectangle, icon));
-    this.renderer.listen(title, 'mouseover', () => this.titleMouseOver(title, icon));
-    this.renderer.listen(icon, 'mouseover', () => this.inIcon = true);
-    this.renderer.listen(icon, 'mouseout', () => this.iconMouseOut(icon));
-    this.renderer.listen(title, 'mouseout', () => this.titleMouseOut(title, icon));
   }
 
-  /*positons the rectangle correctly*/
-  sizer(icon: any, rectangle: any) {
-    this.renderer.setStyle(rectangle, 'bottom', `${this.title_bottom -25}vh`);
+  /*positons the CV_body correctly*/
+  sizer(icon: HTMLElement, CV_body: HTMLElement) {
+    this.renderer.setStyle(CV_body, 'bottom', `${this.title_bottom -25}vh`);
   }
 
-  // enabling or disabling the cv body rectangle by clicking
-  toggleSquare(rectangle: any, icon: any) {
+  // enabling or disabling the cv body CV_body by clicking
+  toggleSquare(CV_body: HTMLElement, icon: HTMLElement) {
     if (!this.inSquare) {
-      this.renderer.setStyle(rectangle, 'display', 'block');
+      this.renderer.setStyle(CV_body, 'display', 'block'); 
+      //CV_body.setStyle('display','none');
       this.inSquare = true;
       icon.style.transform = 'translateX(-50%) rotate(90deg)'; // Translate and rotate
     } else {
-      this.renderer.setStyle(rectangle, 'display', 'none');
+      this.renderer.setStyle(CV_body, 'display', 'none'); 
+      //CV_body.setStyle('display','none');
       this.inSquare = false;
       icon.style.transform = 'translateX(-50%) rotate(0deg)'; // Translate and rotate
     }

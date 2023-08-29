@@ -41,8 +41,8 @@ body {
 
   }
   
-  /* Styling for the rectangle */
-  .rectangle {
+  /* Styling for the CV_body */
+  .CV_body {
     background-color: rgb(202, 204, 180);
     width: 60vw;
     height: 10vh;
@@ -52,5 +52,15 @@ body {
     left: 50%;
     translate: -50%;
     border-radius: 30px;
+    bottom : 50%;
   }
+  /*styling for the text fields of the CV*/
+  .CV_body_text_fields{
+    color: rgb(0, 0, 0);
+    font-family: Calibri;
+    font-size: 5vh;
+    display: block;
+    position: absolute;
+  }
+  
   
