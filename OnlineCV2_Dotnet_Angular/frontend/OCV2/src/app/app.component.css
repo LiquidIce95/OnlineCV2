@@ -1,0 +1,46 @@
+.app-container {
+    background-color: rgb(12, 78, 101);
+    height: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Calibri';
+    font-size: 15vh;
+    color: white;
+    display: block;         
+    position: absolute;
+    bottom: 70vh;
+}
+
+h2 {
+    display: block;
+    color: white;
+    bottom: 50vh;
+    display: block;
+    position: absolute;
+    font-size: 15vh;
+}
+.white-rectangle {
+    width: 60vw; /* adjust as needed */
+    height: 30vh; /* adjust as needed */
+    background-color: rgb(128, 127, 127);
+    bottom: 20vh;
+    display: flex;
+
+    position: absolute;
+    border-radius: 20%;
+    align-items: center;
+    justify-content: center;
+
+}
+h3 {
+    display: block;
+    color: white;
+    display: block;
+    position: flex;
+    font-size: 15vh;
+    bottom: 60vh;
+}
