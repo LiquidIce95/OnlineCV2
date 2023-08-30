@@ -14,6 +14,7 @@ class Icon_button{
     Window : any;
     HoverColor : string;
     Color : string;
+    Vis  :boolean;
 
 
     constructor(parent : HTMLElement, child : HTMLElement,  AppComponent : any, document: any, window : any, HoverColor: string, Color : string){
@@ -28,6 +29,7 @@ class Icon_button{
         this.Color  = Color;
         this.Window = window;
         this.Document = document;
+        this.Vis = false;
 
         this.ParentBottom = this.px_to_vp('bottom',this.Parent);
 
@@ -47,12 +49,15 @@ class Icon_button{
         window.addEventListener('resize', () => this.sizer(this.Icon,this.Child));
         this.Icon.addEventListener('click',()=> this.toggleChild(this.Child,this.Icon));
         this.Parent.addEventListener('mouseover',()=> this.titleMouseOver(this.Parent,this.Icon));
-        this.Icon.addEventListener('mouseover', () => (this.inIcon = true));
+        this.Icon.addEventListener('mouseover', () => this.IconMouseOver(this.Icon));
         this.Icon.addEventListener('mouseout', () => this.iconMouseOut(this.Icon));
         this.Parent.addEventListener('mouseout', () => this.titleMouseOut(this.Parent, this.Icon));
 
 
     }
+
+    
+
 
     px_to_vp(dir:string, ob : HTMLElement): number{
         let style : CSSStyleDeclaration = window.getComputedStyle(ob);
@@ -79,25 +84,30 @@ class Icon_button{
         this.AppComponent.renderer.setStyle(title, 'color', 'grey');
         this.AppComponent.renderer.setStyle(icon, 'opacity', '1');
         this.ParentOn = true;
+        this.Vis = true;
     }
 
     // enabling or disabling the cv body CV_body by clicking
     toggleChild(child: HTMLElement, icon: HTMLElement) {
-            if (!this.ChildOn) {
+            if (!this.ChildOn && this.Vis) {
                 this.AppComponent.renderer.setStyle(this.Child, 'display', 'block'); 
                 this.ChildOn = true;
                 this.Icon.style.transform = 'translateX(-50%) rotate(90deg)'; // Translate and rotate
-            } else {
+            } else if (this.ChildOn){
                 this.AppComponent.renderer.setStyle(this.Child, 'display', 'none'); 
                 this.ChildOn = false;
                 this.Icon.style.transform = 'translateX(-50%) rotate(0deg)'; // Translate and rotate
             }
     } 
+    IconMouseOver(Icon : HTMLElement){
+        this.inIcon = true;
+    }
     iconMouseOut(icon: any) {
         this.inIcon = false;
         setTimeout(() => {
         if (!this.ChildOn && !this.ParentOn && !this.inIcon) {
             this.AppComponent.renderer.setStyle(icon, 'opacity', '0');
+            this.Vis = false;
         }
         }, 2000);
     }
@@ -108,40 +118,12 @@ class Icon_button{
         setTimeout(() => {
         if (!this.ChildOn && !this.ParentOn && !this.inIcon) {
             this.AppComponent.renderer.setStyle(icon, 'opacity', '0');
+            this.Vis = false;
         }
         }, 2000);
     }
 
-    /*TODO: when the child is toggled, we need to shift the elements below the parent to make space 
-    for the child and when the child is toggled off, whe shrink the space again we ASSUME that
-    the elements are stored in the order of display which means at index 0 is the top element
-    space must be viewport height or width*/
-    shifter(mode : string, space : number){
-        if ( mode == 'space' ){
-            let grandpar = this.Parent.parentElement;
-
-            if(grandpar != null){
-                let index : number = 0;
-
-                for(let k : number = 0; k < grandpar.children.length; k++){
-                    if(grandpar.children[k] != this.Parent){
-                        index++;
-                    }
-                    else{
-                        break;
-                    }
-                }
-
-                index++;
-
-                for(let k : number = 0; grandpar.children.length; k++){
-                    
-                }
-            }
-
-            
-        }
-    }
+    
 
 
 };

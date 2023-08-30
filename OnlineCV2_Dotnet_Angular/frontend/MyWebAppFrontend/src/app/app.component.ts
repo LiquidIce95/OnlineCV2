@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
-    // title for the  Online CV
+    // title for the  Online CV 
     const title : HTMLElement = this.renderer.createElement('title');
     this.renderer.setProperty(title, 'innerHTML', 'Curriculum Vitae');
     this.renderer.addClass(title, 'title');
