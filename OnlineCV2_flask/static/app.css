@@ -1,0 +1,62 @@
+/* Resetting some default browser styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #002B57;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    width: 100vw;
+  }
+  
+  /* Styling for the title */
+  .title {
+    color: white;
+    font-family: Calibri;
+    font-size: 10vh;
+    display: block;
+    bottom: 80vh; /* Adjust this value as needed */
+    left: 50%; /* Move the element to the center of its parent container */
+    transform: translateX(-50%); 
+  }
+  
+  /* Styling for the icon */
+  .icon {
+    opacity: 0;
+    text-align: center;
+    line-height: 8vh;
+    /*if you change thsi you need to change the rectangle positioning*/
+    font-size: 7vh;
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    background-color: red;
+    left: 50%; /* Move the element to the center of its parent container */
+    color: white;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateX(-50%); 
+
+  }
+  
+  /* Styling for the CV_body */
+  .CV_body {
+    background-color: rgb(202, 204, 180);
+    width: 60vw;
+    height: 40vh;
+    z-index: 2;
+    display: none;
+    left: 50%;
+    translate: -50%;
+    border-radius: 30px;
+    bottom : 50%;
+  }
+  /*styling for the text fields of the CV*/
+  .CV_body_text_fields{
+    color: rgb(0, 0, 0);
+    font-family: Calibri;
+    font-size: 5vh;
+    display: block;
+  }
+  
+  
