@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class VisibilityService {
-  
-  // BehaviorSubject to manage visibility state
-  private showMenuIconSubject = new BehaviorSubject<boolean>(false);
-  showMenuIcon$ = this.showMenuIconSubject.asObservable();
+  showMenuIcon: boolean = false;
+  showCV_body: boolean = false;
 
-  private showCVBodySubject = new BehaviorSubject<boolean>(false);
-  showCVBody$ = this.showCVBodySubject.asObservable();
-
-  constructor() { }
-
-  toggleMenuIcon() {
-    this.showMenuIconSubject.next(!this.showMenuIconSubject.value);
+  show_MenuIcon() {
+    this.showMenuIcon = true;
   }
 
-  toggleCVBody() {
-    this.showCVBodySubject.next(!this.showCVBodySubject.value);
+  hide_MenuIcon() {
+    setTimeout(() => {
+      if (!this.showCV_body) {
+        this.showMenuIcon = false;
+        this.showCV_body = false;
+      }
+    }, 3000);
   }
 
-  // Add more methods to handle other toggles if necessary
-  
+  show_hide_CV_body() {
+    if (!this.showCV_body) {
+      this.showCV_body = true;
+    }
+    else {
+      this.showCV_body = false;
+      this.showMenuIcon = false;
+    }
+  }
+
 }

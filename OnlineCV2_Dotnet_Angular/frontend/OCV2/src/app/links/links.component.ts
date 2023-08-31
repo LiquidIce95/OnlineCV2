@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { VisibilityService } from './visibility-service.service';
+import { VisibilityService } from '../visibility-service.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-links',
+  templateUrl: './links.component.html',
+  styleUrls: ['./links.component.css'],
   providers: [VisibilityService]  // Add this line
 
 })
-export class AppComponent {
-
-  title = "OCV";
+export class LinksComponent {
   constructor(public visibilityService: VisibilityService) {}
 
   // You can now use the service methods like this:
@@ -25,6 +24,4 @@ export class AppComponent {
   show_hide_CVbody(){
     this.visibilityService.show_hide_CV_body();
   }
-  
-
 }
