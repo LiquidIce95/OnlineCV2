@@ -1,14 +1,27 @@
-<div class="app-container">
-  <h1 (mouseover)="onHover()" (mouseout)="onLeave()">
+<div class="app_container">
+  <div class="title_body">
+    <div class="app_title" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()">
       Curriculum Vitae      
-  </h1>
-  <h2 *ngIf="showMenuIcon"  >
-    ≡
-  </h2>
-  <div class="white-rectangle">
-    <h3 *ngIf="showMenuIcon"  >
+    </div>
+    <div class="app_title_icon" *ngIf=showMenuIcon (click)="show_hide_CV_body()" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()">
       ≡
-    </h3>
+    </div>
   </div>
-
+  <div class="CV_body" *ngIf=showCV_body>
+    <div class="CV_body_titles">
+      Personal Information 👤
+    </div>
+    <div class="CV_body_titles">
+      Education 🎓
+    </div>
+    <div class="CV_body_titles">
+      Experience 🏆
+    </div>
+    <div class="CV_body_titles">
+      Skills 🛠
+    </div>
+    <div class="CV_body_titles">
+      Links 🌐
+    </div>
+  </div>
 </div>

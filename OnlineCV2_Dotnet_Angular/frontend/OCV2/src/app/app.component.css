@@ -1,46 +1,53 @@
-.app-container {
+.app_container {
     background-color: rgb(12, 78, 101);
     height: 200vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-h1 {
+    flex-direction: column;
+ }
+ .title_body{
+    /* width: 100vw; */
+    /* height: 80vh; */
+    display: flex;
+    align-items: center;
+    bottom: 80vh;
+    flex-direction: column;
+    border-radius: 30%;
+    
+ }
+ 
+.app_title {
     font-family: 'Calibri';
-    font-size: 15vh;
+    font-size: 10vh;
     color: white;
     display: block;         
-    position: absolute;
-    bottom: 70vh;
+    position: relative;
+    width: max-content;
 }
-
-h2 {
+.app_title_icon {
+    background-color: black;
     display: block;
     color: white;
-    bottom: 50vh;
-    display: block;
-    position: absolute;
-    font-size: 15vh;
+    position: relative;
+    font-size: 8vh;
+    cursor: pointer;
+    width: 5vw;
+    border-radius: 50%;
+    text-align: center;
 }
-.white-rectangle {
-    width: 60vw; /* adjust as needed */
-    height: 30vh; /* adjust as needed */
-    background-color: rgb(128, 127, 127);
-    bottom: 20vh;
+.CV_body{
+    background-color: rgb(126, 138, 152);
+    width: max-content;
     display: flex;
-
-    position: absolute;
-    border-radius: 20%;
     align-items: center;
-    justify-content: center;
-
+    flex-direction: column;
+    margin-top: 2%;
+    border-radius: 20%;
+    padding: 2vw;
 }
-h3 {
-    display: block;
-    color: white;
-    display: block;
-    position: flex;
-    font-size: 15vh;
-    bottom: 60vh;
+.CV_body_titles{
+    font-size: 6vh;
+    font-family: 'Calibri';
+    width: max-content;
+    cursor: pointer;
 }

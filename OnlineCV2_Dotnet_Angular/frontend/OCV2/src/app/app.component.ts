@@ -11,17 +11,32 @@ export class AppComponent {
 
   // This property will determine if the icon should be displayed or not.
   showMenuIcon: boolean = false;
-  showRect : boolean = false;
+  showCV_body : boolean = false;
 
   // Called when the mouse is over the h1
-  onHover() {
+  show_MenuIcon() {
     this.showMenuIcon = true;
   }
 
   // Called when the mouse leaves the h1
-  onLeave() {
+  hide_MenuIcon() {
     setTimeout(() => {
-      this.showMenuIcon = false;
-    }, 2000); // Hide the icon after 2 seconds (2000 milliseconds)
+      if(!this.showCV_body){
+        this.showMenuIcon = false;
+        this.showCV_body = false;
+      }
+      
+    }, 3000); 
   }
+
+  show_hide_CV_body(){
+    if(!this.showCV_body){
+      this.showCV_body = true;
+    }
+    else{
+      this.showCV_body = false;
+      this.showMenuIcon = false;
+    }
+  }
+
 }
