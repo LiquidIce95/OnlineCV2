@@ -1,6 +1,45 @@
+.app_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .CV_body_titles{
     font-size: 6vh;
     font-family: 'Calibri';
     width: max-content;
     cursor: pointer;
 }
+.SkillsBody{
+    font-size: 3vh;
+    font-family: 'Calibri';
+    width: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+   
+
+}
+
+table {
+    border-collapse: collapse;
+    width:70vw;
+    border-collapse: collapse;
+
+
+}
+tr {
+    cursor: pointer;
+    border-bottom: 1px solid black; /* This will create horizontal lines */
+
+}
+th, td{
+    border: 1px solid black; /* This will create vertical lines */
+    /* border: 1px solid black; */
+    font-family: 'Calibri';
+    font-size: 3vh;
+
+
+    
+}
+

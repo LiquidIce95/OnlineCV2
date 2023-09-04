@@ -1,3 +1,61 @@
-<div class="CV_body_titles">
-    Experience 🏆
+<div class="app_container">
+    <div class="CV_body_titles"
+        (click)="show_hide_CVbody()">
+        Experience 🏆
+    </div>
+    <div *ngIf=visibilityService.showCV_body>
+        <table>
+            <tr>
+                <td>11.2022 - Currently</td> 
+                <td>System Administrator</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Omnicommediagroup CH</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>-Automation of processes</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Server Administration</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Employee IT-Management</td>
+            </tr>
+            <tr>
+                <td>01.2020 - 08.2020</td>
+                <td>Civil Service: Data management</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Entomological Collection ETH Zurich</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>-updating and maintaining database</td>
+            </tr>
+            <tr>
+                <td>11.2015 - 02.2017</td>
+                <td>Lieutenant CH Army</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Deployment at World Economic Forum 2017</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>-Leading and management of 30 people</td>
+            </tr>
+            <tr>
+                <td>08.2012 - 08.2015</td>
+                <td>Commercial Apprenticeship EFZ E- Profile</td>
+            </tr>
+            <tr>
+                <td>tesa tape schweiz AG</td>
+            </tr>
+        </table>
+    </div>
 </div>

@@ -1,9 +1,11 @@
 .app_container {
     background-color: rgb(12, 78, 101);
-    height: 200vh;
+    min-height: 100vh;
+    height: max-content;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 10vw;
  }
  .title_body{
     /* width: 100vw; */
