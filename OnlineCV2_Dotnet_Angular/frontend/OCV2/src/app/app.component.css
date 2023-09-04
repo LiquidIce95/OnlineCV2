@@ -1,5 +1,5 @@
 .app_container {
-    background-color: rgb(12, 78, 101);
+    /* background-color: rgb(12, 78, 101); */
     min-height: 100vh;
     height: max-content;
     display: flex;

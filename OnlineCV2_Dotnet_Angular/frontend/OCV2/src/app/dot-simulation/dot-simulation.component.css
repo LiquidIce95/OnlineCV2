@@ -1,0 +1,9 @@
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;  /* Place canvas behind other content */
+    background-color: rgb(12, 78, 101);
+
+  }
+  
