@@ -1,3 +1,15 @@
-<div class="CV_body_titles">
-    Links 🌐
+
+
+<div class="app_container">
+    <div class="CV_body_titles"
+        (click)="show_hide_CVbody()">
+        Links 🌐
+    </div>
+    <div *ngIf="visibilityService.showCV_body"
+        class="SkillsBody">
+        <a href="https://github.com/LiquidIce95">My Github Profile</a>
+
+        <a href="https://www.linkedin.com/in/david-sanchez-388408268/">My LinkedIn Profile</a>
+        
+    </div>
 </div>

@@ -1,6 +1,23 @@
+.app_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: default;
+}
 .CV_body_titles{
     font-size: 6vh;
     font-family: 'Calibri';
     width: max-content;
     cursor: pointer;
+}
+.SkillsBody{
+    font-size: 3vh;
+    font-family: 'Calibri';
+    width: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+   
+
 }
