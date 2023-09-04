@@ -31,8 +31,8 @@ export class DotSimulationComponent implements AfterViewInit {
       this.dots.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        dx: (Math.random() - 0.5) * 10,
-        dy: (Math.random() - 0.5) * 10,
+        dx: (Math.random() - 0.5) * 2,
+        dy: (Math.random() - 0.5) * 2,
         size: Math.random() * 4 + 2
       });
     }
