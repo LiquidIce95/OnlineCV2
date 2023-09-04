@@ -23,6 +23,7 @@
 
 table {
     border-collapse: collapse;
+
 }
 /* tr {
     cursor: pointer;
@@ -35,6 +36,7 @@ th, td{
     padding-right: 3vw; /* Adjust the value as needed */
     padding-top: 1vh;
     padding-left: 3vw;
+    width:30vw;
 
     
 }
