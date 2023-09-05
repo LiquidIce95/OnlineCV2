@@ -1,3 +1,4 @@
+
 .app_container {
     /* background-color: rgb(12, 78, 101); */
     min-height: 80vh;
@@ -7,6 +8,8 @@
     flex-direction: column;
     padding: 10vw;
  }
+
+
  .title_body{
     /* width: 100vw; */
     /* height: 80vh; */
@@ -16,7 +19,10 @@
     flex-direction: column;
     border-radius: 30%;
     
+    
  }
+
+ 
  
 .app_title {
     font-family: 'Calibri';
@@ -25,7 +31,11 @@
     display: block;         
     position: relative;
     width: max-content;
+
+
 }
+
+
 .app_title_icon {
     background-color: black;
     display: block;
@@ -37,6 +47,7 @@
     border-radius: 50%;
     text-align: center;
 }
+
 .CV_body{
     background-color: rgb(126, 138, 152);
     width: max-content;
@@ -46,6 +57,7 @@
     margin-top: 2%;
     border-radius: 3vw;
     padding: 2vw;
+
     
 }
 

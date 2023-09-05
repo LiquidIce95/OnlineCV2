@@ -17,6 +17,7 @@
     align-items: center;
     flex-direction: column;
     text-align: left;
+    cursor: auto;
     
 
 }
@@ -24,22 +25,33 @@
 table {
     border-collapse: collapse;
 }
-tr {
-    cursor: pointer;
-}
-th, td{
+
+td{
     border-collapse: collapse;
     /* border: 1px solid black; */
     font-family: 'Calibri';
     font-size: 3vh;
     padding-right: 3vw; /* Adjust the value as needed */
-    padding-top: 1vh;
+    /* padding-top: 1vh; */
     padding-left: 3vw;
     width:30vw;
 
 
     
 }
+th{
+    border-collapse: collapse;
+    cursor: pointer;
+    text-align: left;
+    /* border: 1px solid black; */
+    font-family: 'Calibri';
+    font-size: 3vh;
+    padding-right: 3vw; /* Adjust the value as needed */
+    padding-top: 4vh;
+    padding-left: 3vw;
+    width:30vw;
+
+}   
 th:not(:last-child), td:not(:last-child) {
     border-right: 3px solid black;
 }

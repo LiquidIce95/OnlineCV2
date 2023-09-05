@@ -2,14 +2,14 @@
   <app-dot-simulation></app-dot-simulation> <!-- Add this line -->
 
   <div class="title_body">
-    <div class="app_title" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()">
+    <div class="app_title" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()" @fadeInOut>
       Curriculum Vitae      
     </div>
-    <div class="app_title_icon" *ngIf=visibilityService.showMenuIcon (click)="show_hide_CVbody()" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()">
+    <div class="app_title_icon" *ngIf=visibilityService.showMenuIcon (click)="show_hide_CVbody()" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()" @fadeInOut>
       ≡
     </div>
   </div>
-  <div class="CV_body" *ngIf=visibilityService.showCV_body>
+  <div class="CV_body" *ngIf=visibilityService.showCV_body @fadeInOut>
     <app-personal-information></app-personal-information>
     <app-education></app-education>
     <app-experience></app-experience>

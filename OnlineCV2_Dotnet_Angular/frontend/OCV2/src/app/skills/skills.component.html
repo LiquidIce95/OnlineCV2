@@ -5,7 +5,7 @@
     </div>
     <div 
     class=SkillsBody 
-    *ngIf=visibilityService.showCV_body>
+    *ngIf=visibilityService.showCV_body @fadeInOut>
         <table>
             <th>Operating System</th>
             <th>Used</th>
@@ -16,6 +16,24 @@
                 <td>
                     <div class="progress-bar excellent">
                         <div class="progress-bar-inner">excellent</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Kali Linux (Client)</td>
+                <td>currently</td>
+                <td>
+                    <div class="progress-bar very-good">
+                        <div class="progress-bar-inner">very-good</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Debian (Server)</td>
+                <td>currently</td>
+                <td>
+                    <div class="progress-bar good">
+                        <div class="progress-bar-inner">good</div>
                     </div>
                 </td>
             </tr>

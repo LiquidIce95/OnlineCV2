@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
 import { VisibilityService } from './visibility-service.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [VisibilityService]  // Add this line
+  providers: [VisibilityService],  // Add this line
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(1000)),
+    ]),
+  ]
 
 })
 export class AppComponent {

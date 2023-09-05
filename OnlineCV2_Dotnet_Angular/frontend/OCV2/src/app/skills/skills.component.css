@@ -56,12 +56,8 @@ table {
 
 
 }
-tr {
-    cursor: pointer;
-    border-bottom: 1px solid black; /* This will create horizontal lines */
 
-}
-th, td{
+td{
     border: 1px solid black; /* This will create vertical lines */
     /* border: 1px solid black; */
     font-family: 'Calibri';
@@ -71,5 +67,17 @@ th, td{
 
     
 }
+th{
+    border-collapse: collapse;
+    text-align: left;
+    /* border: 1px solid black; */
+    font-family: 'Calibri';
+    font-size: 3vh;
+    padding-right: 3vw; /* Adjust the value as needed */
+    padding-top: 4vh;
+    padding-left: 3vw;
+    width:30vw;
+
+}   
 
 
