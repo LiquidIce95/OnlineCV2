@@ -1,9 +1,9 @@
-<div class="app_container">
+<div class="app_container" >
     <div class="CV_body_titles"
         (click)="show_hide_CVbody()">
         Education 🎓
     </div>
-    <div *ngIf=visibilityService.showCV_body @fadeInOut>
+    <div *ngIf=visibilityService.showCV_body @growShrink >
         <table>
             <tr>
                 <th>2022-2025</th>

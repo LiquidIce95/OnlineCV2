@@ -9,17 +9,28 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./education.component.css'],
   providers: [VisibilityService],
   animations: [
-    trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
+    trigger('growShrink', [
+      state('void', style({ 
+        height: '0', 
+        width: '0',  // Added width
+        opacity: '0', 
+        overflow: 'hidden' 
       })),
-      transition('void <=> *', animate(1000)),
-    ]),
+      state('*', style({ 
+        height: '*', 
+        width: '*',  // Added width
+        opacity: '1', 
+        overflow: 'hidden' 
+      })),
+      transition('void <=> *', animate('1.1s ease-in-out')),
+    ])
+    
   ]
 
 })
 export class EducationComponent {
   constructor(public visibilityService: VisibilityService) {}
+
 
   // You can now use the service methods like this:
   show_MenuIcon() {

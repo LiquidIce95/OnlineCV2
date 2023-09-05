@@ -9,12 +9,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./links.component.css'],
   providers: [VisibilityService],  // Add this line
   animations: [
-    trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
+    trigger('growShrink', [
+      state('void', style({ 
+        height: '0', 
+        width: '0',  // Added width
+        opacity: '0', 
+        overflow: 'hidden' 
       })),
-      transition('void <=> *', animate(1000)),
-    ]),
+      state('*', style({ 
+        height: '*', 
+        width: '*',  // Added width
+        opacity: '1', 
+        overflow: 'hidden' 
+      })),
+      transition('void <=> *', animate('1.1s ease-in-out')),
+    ])
   ]
 
 })
