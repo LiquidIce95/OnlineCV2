@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { VisibilityService } from './visibility-service.service';
-import { trigger, state, style, animate, transition } from '@angular/animations';
-import { BehaviorSubject } from 'rxjs';
+import { trigger, state, style, animate, transition, sequence } from '@angular/animations';
 
 
 @Component({

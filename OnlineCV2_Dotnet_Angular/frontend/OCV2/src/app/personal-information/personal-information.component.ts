@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { VisibilityService } from '../visibility-service.service';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, state, style, animate, transition, sequence } from '@angular/animations';
 
 @Component({
   selector: 'app-personal-information',
@@ -15,14 +15,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         opacity: '0', 
         overflow: 'hidden' 
       })),
-      state('*', style({ 
-        height: '*', 
-        width: '*',  // Added width
-        opacity: '1', 
-        overflow: 'hidden' 
-      })),
-      transition('void <=> *', animate('1.1s ease-in-out')),
+      
+      transition('void => *', [
+        sequence([
+          animate('0.5s ease-in-out', style({ height: '*', width: '*', opacity: '0', overflow: 'hidden' })),
+          animate('0.5s ease-in-out', style({ opacity: '1' }))
+        ])
+      ]), 
+      transition('* => void', [
+        sequence([
+          animate('0.5s ease-in-out', style({ opacity: '0' })),
+          animate('0.5s ease-in-out', style({ height: '0', width: '0', opacity: '0', overflow: 'hidden' })),
+        ])
+      ]), 
     ])
+    
   ]
 
 })
