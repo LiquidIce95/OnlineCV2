@@ -30,6 +30,7 @@
     font-size: 5vh;
     color:white;
     cursor: pointer;
+    z-index: 3;
 } 
 
 .toBottom{
@@ -39,6 +40,7 @@
     font-size: 5vh;
     color:white;
     cursor: pointer;
+    z-index: 3;
 
 }
 .app_title {

@@ -1,7 +1,11 @@
 <div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
     click on the picture to exit preview
     <img (click)="visibilityService.showImage(0)" src='./assets/education/FS23.png' *ngIf="visibilityService.showImgs[0]">
+    <img (click)="visibilityService.showImage(0)" src='./assets/education/HS23tr.png' *ngIf="visibilityService.showImgs[0]">
+    <img (click)="visibilityService.showImage(0)" src='./assets/education/HS23tr2.png' *ngIf="visibilityService.showImgs[0]">
+
     <img (click)="visibilityService.showImage(1)" src='./assets/education/ETH.png' *ngIf="visibilityService.showImgs[1]">
+
     
 </div>
 

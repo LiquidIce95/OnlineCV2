@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,ElementRef, Renderer2 } from '@angular/core';
 
 @Injectable()
 export class VisibilityService {
@@ -7,6 +7,17 @@ export class VisibilityService {
   // assume we wont have more than 10 images per component
   showImgs: boolean[] = [false,false,false,false,false,false,false,false,false,false];
   overlay:boolean = false;
+
+  private el: ElementRef | null = null;
+  private renderer: Renderer2 | null = null;
+
+  private scrollX: number = 0;
+  private scrollY: number = 0;
+
+  storeScrollPosition(): void {
+    this.scrollX = window.scrollX;
+    this.scrollY = window.scrollY;
+  }
 
   show_MenuIcon() {
     this.showMenuIcon = true;
@@ -35,9 +46,16 @@ export class VisibilityService {
     if(this.showImgs[img] == true){
       this.showImgs[img] = false;
       this.overlay = false;
+
+      window.scrollTo({
+        top: this.scrollY,
+        left: this.scrollX,
+        behavior: 'smooth' // optional
+      });
+
     }
     else{
-
+      this.storeScrollPosition();
       this.showImgs[img] = true;
       this.overlay = true;
       window.scrollTo({
@@ -45,6 +63,11 @@ export class VisibilityService {
         left: 0,
         behavior: 'smooth' // optional
       });
+    }
+    if (this.el && this.renderer){
+      const overlayElement = this.el.nativeElement.querySelector('.overlay');
+      this.renderer.setStyle(overlayElement, 'heigth', '100vh');
+
     }
   }
 

@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { VisibilityService } from '../services/visibility-service.service';
 import { trigger, state, style, animate, transition,sequence } from '@angular/animations';
-
 
 @Component({
   selector: 'app-education',
@@ -39,6 +38,6 @@ export class EducationComponent {
   imageLoaded: boolean = false;
   imageVisible: boolean = false;
 
-  constructor(public visibilityService: VisibilityService) {}
+  constructor(private el: ElementRef, private renderer: Renderer2,public visibilityService: VisibilityService) {}
 
 }
