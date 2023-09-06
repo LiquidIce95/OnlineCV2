@@ -6,6 +6,8 @@ interface Dot {
   dx: number;
   dy: number;
   size: number;
+  isStatic?: boolean;
+
 }
 
 @Component({
@@ -17,6 +19,9 @@ export class DotSimulationComponent implements AfterViewInit {
   @ViewChild('canvas', { static: false }) canvas!: ElementRef<HTMLCanvasElement>;
   private ctx!: CanvasRenderingContext2D;
   dots: Dot[] = [];  // Property 'dots' declared and initialized here
+  private staticDotStartCoords: { x: number, y: number } | null = null;
+  private isAiming : Boolean = false;
+
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d')!;
@@ -24,7 +29,43 @@ export class DotSimulationComponent implements AfterViewInit {
     this.canvas.nativeElement.height = window.innerHeight;
     this.initializeDots();
     requestAnimationFrame(this.animate);
+
+    this.canvas.nativeElement.addEventListener('mousedown', this.mouseDown);
+    
   }
+
+  private mouseDown = (event: MouseEvent) => {
+    console.log("test");
+    
+  
+    for (let i = 0; i < this.dots.length; i++) {
+      const x = event.clientX;
+      const y = event.clientY;
+      const dx = x - this.dots[i].x;
+      const dy = y - this.dots[i].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.dots[i].size * 1 && this.dots[i].isStatic == false){
+        // Enter static mode on the first click
+        this.dots[i].isStatic = true;
+        this.staticDotStartCoords = { x, y };  // Store start coords
+        this.dots[i].x = x;
+        this.dots[i].y = y;
+      }
+  
+      else if (this.dots[i].isStatic) {
+        // Set velocity based on the second click for static dot
+        this.dots[i].dx = (x - this.staticDotStartCoords!.x)/50;
+        this.dots[i].dy = (y - this.staticDotStartCoords!.y)/50;
+        this.dots[i].isStatic = false;  // Exit static mode
+        this.staticDotStartCoords = null;  // Reset start coords
+      } 
+      
+      // break;
+    }
+  }
+
+  
 
   private initializeDots() {
     for (let i = 0; i < 70; i++) {
@@ -33,7 +74,8 @@ export class DotSimulationComponent implements AfterViewInit {
         y: Math.random() * window.innerHeight,
         dx: (Math.random() - 0.5) * 2,
         dy: (Math.random() - 0.5) * 2,
-        size: Math.random() * 4 + 2
+        size: Math.random() * 4 + 2,
+        isStatic: false
       });
     }
   }
@@ -41,7 +83,7 @@ export class DotSimulationComponent implements AfterViewInit {
   private animate = () => {
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     this.dots.forEach(dot => {
-      this.moveDot(dot);
+      this.moveDot(dot);  // Pass the stored mouse event
       this.edgeCollision(dot);
       this.drawDot(dot);
     });
@@ -50,8 +92,11 @@ export class DotSimulationComponent implements AfterViewInit {
   }
 
   private moveDot(dot: Dot) {
-    dot.x += dot.dx;
-    dot.y += dot.dy;
+    if (!dot.isStatic) { // Skip if static
+      dot.x += dot.dx;
+      dot.y += dot.dy;
+    } 
+    
   }
 
   private edgeCollision(dot: Dot) {
