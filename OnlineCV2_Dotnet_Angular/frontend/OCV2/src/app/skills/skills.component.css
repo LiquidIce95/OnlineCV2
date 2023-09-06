@@ -67,6 +67,9 @@
     font-size: 4vh;
 
 }
+.clickable{
+    cursor: pointer;
+}
 img {
     width: 80vw;
     position: absolute;

@@ -3,10 +3,10 @@
   <div class="toTop" (click)="visibilityService.scrollUp()" @fadeInOut>🔼</div>
   <div class="toBottom" (click)="visibilityService.scrollDown()" @fadeInOut>🔽</div>
   <div class="title_body">
-    <div class="app_title" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()" @fadeInOut>
+    <div class="app_title" (mouseover)="visibilityService.show_MenuIcon()" (mouseout)="visibilityService.hide_MenuIcon()" @fadeInOut>
       Curriculum Vitae      
     </div>
-    <div class="app_title_icon" *ngIf=visibilityService.showMenuIcon (click)="show_hide_CVbody()" (mouseover)="show_MenuIcon()" (mouseout)="hide_MenuIcon()" @fadeInOut>
+    <div class="app_title_icon" *ngIf=visibilityService.showMenuIcon (click)="visibilityService.show_hide_CV_body()" (mouseover)="visibilityService.show_MenuIcon()" (mouseout)="visibilityService.hide_MenuIcon()" @fadeInOut>
       ≡
     </div>
   </div>

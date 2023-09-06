@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VisibilityService } from './services/visibility-service.service';
 import { trigger, state, style, animate, transition, sequence } from '@angular/animations';
+import { ImagePreloadService } from './services/image-preload-service.service';  // Import your service
 
 
 @Component({
@@ -37,19 +38,10 @@ export class AppComponent {
 
   title = "OCV";
 
-  constructor(public visibilityService: VisibilityService) {}
+  constructor(public visibilityService: VisibilityService,private imagePreloadService: ImagePreloadService) {}
 
-  // You can now use the service methods like this:
-  show_MenuIcon() {
-    this.visibilityService.show_MenuIcon();
-  }
-
-  hide_MenuIcon(){
-    this.visibilityService.hide_MenuIcon();
-  }
-  
-  show_hide_CVbody(){
-    this.visibilityService.show_hide_CV_body();
+  ngOnInit(): void {  // Add this lifecycle hook
+    this.imagePreloadService.preloadImages();  // Call the preload function
   }
   
 

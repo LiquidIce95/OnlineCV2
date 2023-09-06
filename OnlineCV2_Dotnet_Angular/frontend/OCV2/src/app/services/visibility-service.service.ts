@@ -55,9 +55,9 @@ export class VisibilityService {
 
     }
     else{
-      this.storeScrollPosition();
       this.showImgs[img] = true;
       this.overlay = true;
+      this.storeScrollPosition();
       window.scrollTo({
         top: 0,
         left: 0,
