@@ -22,6 +22,26 @@
 
 }
 
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 300vh;
+    height: max-content;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);    
+    text-align: center;
+    color: yellow;
+    font-family: 'Calibri';
+    font-size: 4vh;
+
+}
+
+
+
 table {
     border-collapse: collapse;
 }
@@ -54,5 +74,14 @@ th{
 }   
 th:not(:last-child), td:not(:last-child) {
     border-right: 3px solid black;
+}
+
+img {
+    width: 80vw;
+    position: absolute;
+    opacity: 1;
+    padding: 10vw;
+    /* top: 0; */
+    /* left: 0; */
 }
 

@@ -1,13 +1,23 @@
+<div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
+    click on the picture to exit preview
+    <img (click)="visibilityService.showImage(0)" src='./assets/education/FS23.png' *ngIf="visibilityService.showImgs[0]">
+    <img (click)="visibilityService.showImage(1)" src='./assets/education/ETH.png' *ngIf="visibilityService.showImgs[1]">
+    
+</div>
+
+
 <div class="app_container" >
     <div class="CV_body_titles"
-        (click)="show_hide_CVbody()">
+        (click)="visibilityService.show_hide_CV_body()">
         Education 🎓
     </div>
     <div *ngIf=visibilityService.showCV_body @growShrink >
         <table>
             <tr>
                 <th>2022-2025</th>
-                <th>BsC Mathematics/ ComputerScience (120/60) on enlgish 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(0)">
+                    BsC Mathematics/ Computer Science (120/60) on English 👁‍🗨
+                </th>
             </tr>
             <tr>
                 <td></td>
@@ -44,7 +54,7 @@
             <tr></tr>
             <tr>
                 <th>2020 - 2022</th>
-                <th>BsC Mathematics / Computer Science 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(1)">BsC Mathematics / Computer Science 👁‍🗨</th>
             </tr>
              <tr>
                 <td></td>

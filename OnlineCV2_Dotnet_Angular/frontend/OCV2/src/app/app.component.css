@@ -23,7 +23,24 @@
  }
 
  
- 
+.toTop{
+    position: fixed;
+    top: 10vh;
+    right: 5vw;
+    font-size: 5vh;
+    color:white;
+    cursor: pointer;
+} 
+
+.toBottom{
+    position: fixed;
+    top: 30vh;
+    right: 5vw;
+    font-size: 5vh;
+    color:white;
+    cursor: pointer;
+
+}
 .app_title {
     font-family: 'Calibri';
     font-size: 10vh;
