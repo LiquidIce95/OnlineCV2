@@ -1,3 +1,20 @@
+<div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
+    click on the picture to exit preview
+    <img (click)="visibilityService.showImage(0)" src='./assets/experience/datamanag.png' *ngIf="visibilityService.showImgs[0]">
+    
+    <img (click)="visibilityService.showImage(1)" src='./assets/experience/LeutnantUrkunde.png' *ngIf="visibilityService.showImgs[1]">
+    <img (click)="visibilityService.showImage(1)" src='./assets/experience/mil1.png' *ngIf="visibilityService.showImgs[1]">
+    <img (click)="visibilityService.showImage(1)" src='./assets/experience/mil2.png' *ngIf="visibilityService.showImgs[1]">
+
+
+    <img (click)="visibilityService.showImage(2)" src='./assets/experience/Lehr1.png' *ngIf="visibilityService.showImgs[2]">
+    <img (click)="visibilityService.showImage(2)" src='./assets/experience/Lehr2.png' *ngIf="visibilityService.showImgs[2]">
+    <img (click)="visibilityService.showImage(2)" src='./assets/experience/SIZ.png' *ngIf="visibilityService.showImgs[2]">
+
+</div>
+
+
+
 <div class="app_container">
     <div class="CV_body_titles"
         (click)="visibilityService.show_hide_CV_body()">
@@ -27,7 +44,9 @@
             </tr>
             <tr>
                 <th>01.2020 - 08.2020</th>
-                <th>Civil Service: Data management 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(0)">
+                    Civil Service: Data management 👁‍🗨
+                </th>
             </tr>
             <tr>
                 <td></td>
@@ -39,7 +58,7 @@
             </tr>
             <tr>
                 <th>11.2015 - 02.2017</th>
-                <th>Lieutenant CH Army 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(1)">Lieutenant CH Army 👁‍🗨</th>
             </tr>
             <tr>
                 <td></td>
@@ -51,7 +70,7 @@
             </tr>
             <tr>
                 <th>08.2012 - 08.2015</th>
-                <th>Commercial Apprenticeship EFZ E- Profile 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(2)">Commercial Apprenticeship EFZ E- Profile 👁‍🗨</th>
             </tr>
             <tr>
                 <td></td>
