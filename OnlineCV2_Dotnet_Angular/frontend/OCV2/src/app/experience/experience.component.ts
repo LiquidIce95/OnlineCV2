@@ -6,7 +6,7 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.css'],
+  styleUrls: ['../global-styles.css','./experience.component.css'],
   providers: [VisibilityService],  // Add this line
   animations: [
     trigger('growShrink', [

@@ -5,7 +5,7 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
 @Component({
   selector: 'app-personal-information',
   templateUrl: './personal-information.component.html',
-  styleUrls: ['./personal-information.component.css'],
+  styleUrls: ['../global-styles.css','./personal-information.component.css'],
   providers: [VisibilityService],  
   animations: [
     trigger('growShrink', [
