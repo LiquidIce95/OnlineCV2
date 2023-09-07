@@ -1,0 +1,18 @@
+
+<div class="app_container">
+    <div class="CV_body_titles"
+        (click)="visibilityService.show_hide_CV_body()">
+        Freelancing 🌐
+    </div>
+    <div  *ngIf="visibilityService.showCV_body" @growShrink
+        class="PersonalInformationBody">
+        <div>Website for Insurance consultant</div>
+        <a href="https://github.com/LiquidIce95">Link to client</a>
+
+        <div>Process Optimization of Online Ordering</div>
+        <a href="https://www.linkedin.com/in/david-sanchez-388408268/">Link to client</a>
+        
+        <div class="text">You can hire me for: Website creation, process optimization, general technical / technological consulting</div>
+
+    </div>
+</div>

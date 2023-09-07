@@ -10,6 +10,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
 import { LinksComponent } from './links/links.component';
 import { DotSimulationComponent } from './dot-simulation/dot-simulation.component';
+import { FreelancingComponent } from './freelancing/freelancing.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DotSimulationComponent } from './dot-simulation/dot-simulation.componen
     ExperienceComponent,
     SkillsComponent,
     LinksComponent,
-    DotSimulationComponent
+    DotSimulationComponent,
+    FreelancingComponent
   ],
   imports: [
     BrowserModule,

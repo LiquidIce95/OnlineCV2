@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { VisibilityService } from '../services/visibility-service.service';
 import { trigger, state, style, animate, transition, sequence } from '@angular/animations';
 
-
 @Component({
-  selector: 'app-links',
-  templateUrl: './links.component.html',
-  styleUrls: ['../global-styles.css','./links.component.css'],
+  selector: 'app-freelancing',
+  templateUrl: './freelancing.component.html',
+  styleUrls: ['../global-styles.css','./freelancing.component.css'],
   providers: [VisibilityService],  // Add this line
   animations: [
     trigger('growShrink', [
@@ -30,12 +29,9 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
         ])
       ]), 
     ])
-    
   ]
-
 })
-export class LinksComponent {
+export class FreelancingComponent {
   constructor(public visibilityService: VisibilityService) {}
 
-  
 }
