@@ -9,7 +9,7 @@ interface Dot {
   isStatic?: boolean;
 }
 
-const PROXIMITY_THRESHOLD_RATIO = 0.17;
+const PROXIMITY_THRESHOLD_RATIO = 0.20;
 const DOT_COUNT = 70;
 
 @Component({
@@ -22,7 +22,6 @@ export class DotSimulationComponent implements AfterViewInit {
   private ctx!: CanvasRenderingContext2D;
   dots: Dot[] = [];
   private staticDotStartCoords: { x: number, y: number } | null = null;
-  private isAiming: boolean = false;
   private X: number = 0;
   private Y: number = 0;
   private dot: Dot | null = null; 
@@ -58,7 +57,7 @@ export class DotSimulationComponent implements AfterViewInit {
       y: Math.random() * window.innerHeight,
       dx: (Math.random() - 0.5) * 2,
       dy: (Math.random() - 0.5) * 2,
-      size: Math.random() * 4 + 2,
+      size: Math.random() * 3 + 2,
       isStatic: false,
     };
   }
@@ -70,7 +69,7 @@ export class DotSimulationComponent implements AfterViewInit {
     for (let i = 0; i < this.dots.length; i++) {
       const distance = this.getDistance(x, y, this.dots[i].x, this.dots[i].y);
       
-      if (distance < this.dots[i].size * 1 && !this.dots[i].isStatic) {
+      if (distance < this.dots[i].size * 1.5 && !this.dots[i].isStatic) {
         this.enterStaticMode(i, x, y);
       } else if (this.dots[i].isStatic) {
         this.exitStaticMode(i, x, y);
@@ -83,7 +82,6 @@ export class DotSimulationComponent implements AfterViewInit {
     this.staticDotStartCoords = { x, y };
     this.dots[index].x = x;
     this.dots[index].y = y;
-    this.isAiming = true;
     this.dot = this.dots[index];
     this.canvas.nativeElement.addEventListener('mousemove', this.mouseMove);
     
@@ -99,7 +97,6 @@ export class DotSimulationComponent implements AfterViewInit {
     this.dots[index].isStatic = false;
     this.staticDotStartCoords = null;
     this.canvas.nativeElement.removeEventListener('mousemove', this.mouseMove);
-    this.isAiming = false;
     this.dot = null;
 
     if(this.tutorialText != null){
