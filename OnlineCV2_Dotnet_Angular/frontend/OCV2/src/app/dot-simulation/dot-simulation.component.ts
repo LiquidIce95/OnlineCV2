@@ -21,7 +21,9 @@ export class DotSimulationComponent implements AfterViewInit {
   dots: Dot[] = [];  // Property 'dots' declared and initialized here
   private staticDotStartCoords: { x: number, y: number } | null = null;
   private isAiming : Boolean = false;
-
+  private X : number = 0;
+  private Y : number = 0;
+  private dot: Dot | null = null;
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d')!;
@@ -31,16 +33,19 @@ export class DotSimulationComponent implements AfterViewInit {
     requestAnimationFrame(this.animate);
 
     this.canvas.nativeElement.addEventListener('mousedown', this.mouseDown);
-    
   }
 
+  // Invariant: only one dot is static at a time
   private mouseDown = (event: MouseEvent) => {
     console.log("test");
-    
+    const x = event.clientX;
+    const y = event.clientY;
   
+      
+
+
     for (let i = 0; i < this.dots.length; i++) {
-      const x = event.clientX;
-      const y = event.clientY;
+      
       const dx = x - this.dots[i].x;
       const dy = y - this.dots[i].y;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -51,6 +56,10 @@ export class DotSimulationComponent implements AfterViewInit {
         this.staticDotStartCoords = { x, y };  // Store start coords
         this.dots[i].x = x;
         this.dots[i].y = y;
+        this.isAiming = true;
+        this.dot = this.dots[i];
+        this.canvas.nativeElement.addEventListener('mousemove', this.mouseMove);
+
       }
   
       else if (this.dots[i].isStatic) {
@@ -59,6 +68,10 @@ export class DotSimulationComponent implements AfterViewInit {
         this.dots[i].dy = (y - this.staticDotStartCoords!.y)/50;
         this.dots[i].isStatic = false;  // Exit static mode
         this.staticDotStartCoords = null;  // Reset start coords
+        this.canvas.nativeElement.removeEventListener('mousemove', this.mouseMove);
+        this.isAiming = false;
+        this.dot =null
+        this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       } 
       
       // break;
@@ -80,6 +93,28 @@ export class DotSimulationComponent implements AfterViewInit {
     }
   }
 
+  drawAim(){
+    if(this.dot != null){
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.dot.x, this.dot.y);
+      this.ctx.lineTo(this.X, this.Y);
+      this.ctx.strokeStyle = `rgba(100, 0, 0)`;  // Fade-in effect
+      this.ctx.stroke();
+    }
+
+
+  }
+
+  mouseMove = (event: MouseEvent) => {
+    if(this.isAiming && this.dot !=null){
+
+      this.X = event.clientX;
+      this.Y = event.clientY;
+
+      this.drawAim();
+    }
+  }
+
   private animate = () => {
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     this.dots.forEach(dot => {
@@ -88,11 +123,12 @@ export class DotSimulationComponent implements AfterViewInit {
       this.drawDot(dot);
     });
     this.dotInteraction();
+    this.drawAim();
     requestAnimationFrame(this.animate);
   }
 
   private moveDot(dot: Dot) {
-    if (!dot.isStatic) { // Skip if static
+    if (!dot.isStatic) { 
       dot.x += dot.dx;
       dot.y += dot.dy;
     } 
