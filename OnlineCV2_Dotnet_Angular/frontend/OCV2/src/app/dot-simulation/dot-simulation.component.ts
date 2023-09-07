@@ -25,9 +25,10 @@ export class DotSimulationComponent implements AfterViewInit {
   private isAiming: boolean = false;
   private X: number = 0;
   private Y: number = 0;
-  private dot: Dot | null = null;
-  
+  private dot: Dot | null = null; 
   private proximityThreshold: number = PROXIMITY_THRESHOLD_RATIO * window.innerHeight;
+  private tutorialText: string | null = 'Click on a dot in the lower quarter!';
+
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d')!;
@@ -38,6 +39,13 @@ export class DotSimulationComponent implements AfterViewInit {
     this.canvas.nativeElement.addEventListener('mousedown', this.mouseDown);
   }
 
+  private drawTutorial() {
+    if (this.tutorialText) {
+      this.ctx.font = '2vh Calibri';
+      this.ctx.fillStyle = 'black';
+      this.ctx.fillText(this.tutorialText, 20, 50);
+    }
+  }
   private initializeDots() {
     for (let i = 0; i < DOT_COUNT; i++) {
       this.dots.push(this.createRandomDot());
@@ -78,6 +86,11 @@ export class DotSimulationComponent implements AfterViewInit {
     this.isAiming = true;
     this.dot = this.dots[index];
     this.canvas.nativeElement.addEventListener('mousemove', this.mouseMove);
+    
+    if(this.tutorialText != null){
+      this.tutorialText = 'Click on a spot to launch dot';
+    }
+
   }
 
   private exitStaticMode(index: number, x: number, y: number) {
@@ -88,6 +101,11 @@ export class DotSimulationComponent implements AfterViewInit {
     this.canvas.nativeElement.removeEventListener('mousemove', this.mouseMove);
     this.isAiming = false;
     this.dot = null;
+
+    if(this.tutorialText != null){
+      this.tutorialText = null;
+    }
+
   }
 
   private getDistance(x1: number, y1: number, x2: number, y2: number): number {
@@ -107,6 +125,8 @@ export class DotSimulationComponent implements AfterViewInit {
     
     this.dotInteraction();
     this.drawAim();
+    this.drawTutorial();
+
     
     requestAnimationFrame(this.animate);
   }

@@ -35,14 +35,16 @@ import { ImagePreloadService } from './services/image-preload-service.service'; 
 
 })
 export class AppComponent {
-
-  title = "OCV";
+  animateTitle = true;
+  title = "Commodore.business";
 
   constructor(public visibilityService: VisibilityService,private imagePreloadService: ImagePreloadService) {}
 
   ngOnInit(): void {  // Add this lifecycle hook
     this.imagePreloadService.preloadImages();  // Call the preload function
   }
-  
+  stopAnimation(): void {
+    this.animateTitle = false;
+  }
 
 }
