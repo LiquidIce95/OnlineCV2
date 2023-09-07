@@ -111,7 +111,7 @@ export class DotSimulationComponent implements AfterViewInit {
   }
 
   private dotInteraction() {
-    const proximityThreshold = 15 * (window.innerHeight / 100);  // 15vh
+    const proximityThreshold = 17 * (window.innerHeight / 100);  // 15vh
 
     for (let i = 0; i < this.dots.length; i++) {
       for (let j = i + 1; j < this.dots.length; j++) {
