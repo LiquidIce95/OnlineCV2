@@ -41,9 +41,12 @@ export class DotSimulationComponent implements AfterViewInit {
   private drawTutorial() {
     if (this.tutorialText) {
       this.ctx.font = '2vh Calibri';
+      this.ctx.textAlign = 'center'; // Set text alignment to center
+      this.ctx.fillStyle = 'yellow';
+      this.ctx.fillText(this.tutorialText, window.innerWidth * 0.5, window.innerHeight * 0.6);
       this.ctx.fillStyle = 'black';
-      this.ctx.fillText(this.tutorialText, window.innerHeight/4, window.innerWidth/2);
     }
+    
   }
   private initializeDots() {
     for (let i = 0; i < DOT_COUNT; i++) {

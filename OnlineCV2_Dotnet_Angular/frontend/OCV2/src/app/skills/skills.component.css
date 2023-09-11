@@ -39,11 +39,11 @@
 }
 /* Levels of proficiency */
 .good .progress-bar-inner {
-    width: 25%;
+    width: 50%;
 }
 
 .very-good .progress-bar-inner {
-    width: 50%;
+    width: 75%;
 }
 
 .excellent .progress-bar-inner {
