@@ -9,7 +9,7 @@ export class VisibilityService {
   overlay:boolean = false;
 
   private renderer: Renderer2 | null = null;
-  
+
   constructor(renderer: Renderer2| null) { 
     this.renderer = renderer;
   }
@@ -41,7 +41,6 @@ export class VisibilityService {
       this.showImgs[img] = false;
       this.overlay = false;
       if(this.renderer){
-        console.log("overflow vis");
         this.renderer.removeStyle(document.body, 'overflow');
       }
     }
@@ -49,7 +48,6 @@ export class VisibilityService {
       this.showImgs[img] = true;
       this.overlay = true;
       if(this.renderer){
-        console.log("overflow hidden");
         this.renderer.setStyle(document.body, 'overflow', 'hidden');
       }
 
