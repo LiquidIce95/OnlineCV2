@@ -1,82 +1,182 @@
-.app_container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.CV_body_titles{
-    font-size: 6vh;
-    font-family: 'Calibri';
-    width: max-content;
-    cursor: pointer;
-}
-.PersonalInformationBody{
-    font-size: 3vh;
-    font-family: 'Calibri';
-    width: max-content;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: left;
+
+@media (min-width: 601px){
+    .app_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .CV_body_titles{
+        font-size: 6vh;
+        font-family: 'Calibri';
+        width: max-content;
+        cursor: pointer;
+    }
+    .PersonalInformationBody{
+        font-size: 3vh;
+        font-family: 'Calibri';
+        width: max-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+        
     
-
-}
-
-.overlay {
-    position: fixed; /* Fixed position to cover the entire viewport */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Cover the entire viewport width */
-    height: 100vh; /* Cover the entire viewport height */
-    overflow-y: scroll; /* Enable vertical scrolling within the overlay */
-    background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
-    padding: 20px; /* Optional: some padding to ensure content isn't flush against the screen edge */
-    box-sizing: border-box; /* To include padding and border in element's total width and height */
-}
-
-
-img {
-    width: 80vw;
-    position: relative;
-    opacity: 1;
-    padding: 10vw;
-    /* top: 0; */
-    /* left: 0; */
-}
-
-table {
-    border-collapse: collapse;
-
-}
-
-td{
-    border-collapse: collapse;
-    /* border: 1px solid black; */
-    font-family: 'Calibri';
-    font-size: 3vh;
-    padding-right: 3vw; /* Adjust the value as needed */
-    padding-top: 1vh;
-    padding-left: 3vw;
-    width:30vw;
-    text-align: left;
-
+    }
+    
+    .overlay {
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Cover the entire viewport width */
+        height: 100vh; /* Cover the entire viewport height */
+        overflow-y: scroll; /* Enable vertical scrolling within the overlay */
+        background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
+        padding: 10vh; /* Optional: some padding to ensure content isn't flush against the screen edge */
+        box-sizing: border-box; /* To include padding and border in element's total width and height */
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    img {
+        width: 90vw;
+        height: 90vh;
+        position: relative;
+        opacity: 1;
+        padding: 5vw;
+        /* top: 0; */
+        /* left: 0; */
+    }
+    
+    table {
+        border-collapse: collapse;
+    
+    }
+    
+    td{
+        border-collapse: collapse;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vh;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 1vh;
+        padding-left: 3vw;
+        width:30vw;
+        text-align: left;
+    
+        
+    }
+    
+    th{
+        border-collapse: collapse;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vh;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 3vh;
+        padding-left: 3vw;
+        width:30vw;
+        text-align: left;
+        cursor: pointer;
+    
+    
+    }
+    th:not(:last-child), td:not(:last-child) {
+        border-right: 3px solid black;
+    }
+    
     
 }
 
-th{
-    border-collapse: collapse;
-    /* border: 1px solid black; */
-    font-family: 'Calibri';
-    font-size: 3vh;
-    padding-right: 3vw; /* Adjust the value as needed */
-    padding-top: 3vh;
-    padding-left: 3vw;
-    width:30vw;
-    text-align: left;
-    cursor: pointer;
 
 
+
+@media (max-width: 600px){
+    .app_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .CV_body_titles{
+        font-size: 6vw;
+        font-family: 'Calibri';
+        width: max-content;
+        cursor: pointer;
+    }
+    .PersonalInformationBody{
+        font-size: 3vw;
+        font-family: 'Calibri';
+        width: max-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+        
+    
+    }
+    
+    .overlay {
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Cover the entire viewport width */
+        height: 100vh; /* Cover the entire viewport height */
+        overflow-y: scroll; /* Enable vertical scrolling within the overlay */
+        background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
+        padding: 3vw; /* Optional: some padding to ensure content isn't flush against the screen edge */
+        box-sizing: border-box; /* To include padding and border in element's total width and height */
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    img {
+        width: 80vw;
+        position: relative;
+        opacity: 1;
+        padding: 3vw;
+        /* top: 0; */
+        /* left: 0; */
+    }
+    
+    table {
+        border-collapse: collapse;
+    
+    }
+    
+    td{
+        border-collapse: collapse;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vw;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 1vh;
+        padding-left: 3vw;
+        width:40vw;
+        text-align: left;
+    
+        
+    }
+    
+    th{
+        border-collapse: collapse;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vw;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 3vh;
+        padding-left: 3vw;
+        width:40vw;
+        text-align: left;
+        cursor: pointer;
+    
+    
+    }
+    th:not(:last-child), td:not(:last-child) {
+        border-right: 3px solid black;
+    }
+    
+    
 }
-th:not(:last-child), td:not(:last-child) {
-    border-right: 3px solid black;
-}
-

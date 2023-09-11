@@ -1,108 +1,227 @@
-.app_container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    cursor: default;
-}
-.CV_body_titles{
-    font-size: 6vh;
-    font-family: 'Calibri';
-    width: max-content;
-    cursor: pointer;
-}
-.SkillsBody{
-    font-size: 3vh;
-    font-family: 'Calibri';
-    width: max-content;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: left;
-   
-
-}
-/* Progress bar styles */
-.progress-bar {
-    height: 2vh;
-    background-color: grey;
-    border-radius: 2vw;
-}
-
-.progress-bar-inner {
-    height: 100%;
-    background-color: rgb(41, 228, 252);
-
-    text-align: left;
-    font-size: 2vh;
-    border-radius: 2vw;
-
-}
-/* Levels of proficiency */
-.good .progress-bar-inner {
-    width: 50%;
-}
-
-.very-good .progress-bar-inner {
-    width: 75%;
-}
-
-.excellent .progress-bar-inner {
-    width: 100%;
-}
 
 
-.overlay {
-    position: fixed; /* Fixed position to cover the entire viewport */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Cover the entire viewport width */
-    height: 100vh; /* Cover the entire viewport height */
-    overflow-y: scroll; /* Enable vertical scrolling within the overlay */
-    background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
-    padding: 20px; /* Optional: some padding to ensure content isn't flush against the screen edge */
-    box-sizing: border-box; /* To include padding and border in element's total width and height */
-}
-
-.clickable{
-    cursor: pointer;
-}
-img {
-    width: 80vw;
-    position: absolute;
-    opacity: 1;
-    padding: 10vw;
-    /* top: 0; */
-    /* left: 0; */
-}
-
-table {
-    border-collapse: collapse;
-    width:70vw;
-
-
-}
-
-td{
-    border: 1px solid black; /* This will create vertical lines */
-    /* border: 1px solid black; */
-    font-family: 'Calibri';
-    font-size: 3vh;
-    width: 20vw;
-
-
+@media(min-width: 600px){
+    .app_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        cursor: default;
+    }
+    .CV_body_titles{
+        font-size: 6vh;
+        font-family: 'Calibri';
+        width: max-content;
+        cursor: pointer;
+    }
+    .SkillsBody{
+        font-size: 3vh;
+        font-family: 'Calibri';
+        width: max-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+       
     
+    }
+    /* Progress bar styles */
+    .progress-bar {
+        height: 2vh;
+        background-color: grey;
+        border-radius: 2vw;
+    }
+    
+    .progress-bar-inner {
+        height: 100%;
+        background-color: rgb(41, 228, 252);
+    
+        text-align: left;
+        font-size: 2vh;
+        border-radius: 2vw;
+    
+    }
+    /* Levels of proficiency */
+    .good .progress-bar-inner {
+        width: 50%;
+    }
+    
+    .very-good .progress-bar-inner {
+        width: 75%;
+    }
+    
+    .excellent .progress-bar-inner {
+        width: 100%;
+    }
+    
+    
+    .overlay {
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Cover the entire viewport width */
+        height: 100vh; /* Cover the entire viewport height */
+        overflow-y: scroll; /* Enable vertical scrolling within the overlay */
+        background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
+        padding: 20px; /* Optional: some padding to ensure content isn't flush against the screen edge */
+        box-sizing: border-box; /* To include padding and border in element's total width and height */
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .clickable{
+        cursor: pointer;
+    }
+    img {
+        width: 80vw;
+        position: absolute;
+        opacity: 1;
+        padding: 10vw;
+        /* top: 0; */
+        /* left: 0; */
+    }
+    
+    table {
+        border-collapse: collapse;
+        width:70vw;
+    
+    
+    }
+    
+    td{
+        border: 1px solid black; /* This will create vertical lines */
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vh;
+        width: 20vw;
+    
+    
+        
+    }
+    th{
+        border-collapse: collapse;
+        text-align: left;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vh;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 4vh;
+        padding-left: 3vw;
+        width:30vw;
+    
+    }   
 }
-th{
-    border-collapse: collapse;
-    text-align: left;
-    /* border: 1px solid black; */
-    font-family: 'Calibri';
-    font-size: 3vh;
-    padding-right: 3vw; /* Adjust the value as needed */
-    padding-top: 4vh;
-    padding-left: 3vw;
-    width:30vw;
-
-}   
-
+@media(max-width: 600px){
+    .app_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        cursor: default;
+    }
+    .CV_body_titles{
+        font-size: 6vw;
+        font-family: 'Calibri';
+        width: max-content;
+        cursor: pointer;
+    }
+    .SkillsBody{
+        font-size: 3wh;
+        font-family: 'Calibri';
+        width: max-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+       
+    
+    }
+    /* Progress bar styles */
+    .progress-bar {
+        height: 2vh;
+        background-color: grey;
+        border-radius: 2vw;
+    }
+    
+    .progress-bar-inner {
+        height: 100%;
+        background-color: rgb(41, 228, 252);
+    
+        text-align: left;
+        font-size: 2vh;
+        border-radius: 2vw;
+    
+    }
+    /* Levels of proficiency */
+    .good .progress-bar-inner {
+        width: 50%;
+    }
+    
+    .very-good .progress-bar-inner {
+        width: 75%;
+    }
+    
+    .excellent .progress-bar-inner {
+        width: 100%;
+    }
+    
+    
+    .overlay {
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Cover the entire viewport width */
+        height: 100vh; /* Cover the entire viewport height */
+        overflow-y: scroll; /* Enable vertical scrolling within the overlay */
+        background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
+        padding: 3vw; /* Optional: some padding to ensure content isn't flush against the screen edge */
+        box-sizing: border-box; /* To include padding and border in element's total width and height */
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .clickable{
+        cursor: pointer;
+    }
+    
+    img {
+        width: 80vw;
+        position: relative;
+        opacity: 1;
+        padding: 3vw;
+        /* top: 0; */
+        /* left: 0; */
+    }
+    
+    
+    table {
+        border-collapse: collapse;
+        width:80vw;
+    
+    
+    }
+    
+    td{
+        border: 1px solid black; /* This will create vertical lines */
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vw;
+        width: 20vw;
+    
+    
+        
+    }
+    th{
+        border-collapse: collapse;
+        text-align: left;
+        /* border: 1px solid black; */
+        font-family: 'Calibri';
+        font-size: 3vw;
+        padding-right: 3vw; /* Adjust the value as needed */
+        padding-top: 4vw;
+        padding-left: 3vw;
+        width:30vw;
+    
+    }   
+}
 

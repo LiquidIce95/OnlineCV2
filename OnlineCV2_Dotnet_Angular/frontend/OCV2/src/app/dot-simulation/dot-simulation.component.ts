@@ -60,7 +60,7 @@ export class DotSimulationComponent implements AfterViewInit {
       y: Math.random() * window.innerHeight,
       dx: (Math.random() - 0.5) * 2,
       dy: (Math.random() - 0.5) * 2,
-      size: Math.random() * 3 + 2,
+      size: Math.random() * 3 + 1,
       isStatic: false,
     };
   }
