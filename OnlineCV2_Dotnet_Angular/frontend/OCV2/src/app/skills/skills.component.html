@@ -3,7 +3,9 @@
     <img (click)="visibilityService.showImage(0)" src='./assets/languages/ENB2.png' *ngIf="visibilityService.showImgs[0]">
     
     <img (click)="visibilityService.showImage(1)" src='./assets/languages/FranzB2.png' *ngIf="visibilityService.showImgs[1]">
-    
+    <div class="closeIcon" (click)="visibilityService.showImage(-1)">
+        🗙
+    </div>
 </div>
 
 <div class="app_container">

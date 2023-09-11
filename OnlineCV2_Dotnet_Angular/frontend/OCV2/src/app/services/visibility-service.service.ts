@@ -37,7 +37,20 @@ export class VisibilityService {
   }
 
   showImage(img: number) {
-    if(this.showImgs[img] == true){
+
+    if(img == -1){
+      for(var j = 0; j < this.showImgs.length; j++){
+        this.showImgs[j] = false;
+
+      }
+      if(this.renderer){
+        this.renderer.removeStyle(document.body, 'overflow');
+      }
+      this.overlay = false;
+
+    }
+
+    else if(this.showImgs[img] == true){
       this.showImgs[img] = false;
       this.overlay = false;
       if(this.renderer){
@@ -52,6 +65,8 @@ export class VisibilityService {
       }
 
     }
+
+
   }
 
   scrollUp(){
