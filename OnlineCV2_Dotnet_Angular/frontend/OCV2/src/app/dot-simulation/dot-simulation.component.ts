@@ -42,7 +42,7 @@ export class DotSimulationComponent implements AfterViewInit {
     if (this.tutorialText) {
       this.ctx.font = '2vh Calibri';
       this.ctx.fillStyle = 'black';
-      this.ctx.fillText(this.tutorialText, 20, 50);
+      this.ctx.fillText(this.tutorialText, window.innerHeight/4, window.innerWidth/2);
     }
   }
   private initializeDots() {
