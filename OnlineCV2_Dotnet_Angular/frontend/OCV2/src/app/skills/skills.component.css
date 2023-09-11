@@ -50,23 +50,19 @@
     width: 100%;
 }
 
-.overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 300vh;
-    height: max-content;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.7);    
-    text-align: center;
-    color: yellow;
-    font-family: 'Calibri';
-    font-size: 4vh;
 
+.overlay {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover the entire viewport width */
+    height: 100vh; /* Cover the entire viewport height */
+    overflow-y: scroll; /* Enable vertical scrolling within the overlay */
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: background color for overlay */
+    padding: 20px; /* Optional: some padding to ensure content isn't flush against the screen edge */
+    box-sizing: border-box; /* To include padding and border in element's total width and height */
 }
+
 .clickable{
     cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { Injectable, Renderer2 } from '@angular/core';
+import { Injectable,ElementRef, Renderer2 } from '@angular/core';
 
 @Injectable()
 export class VisibilityService {
@@ -8,13 +8,11 @@ export class VisibilityService {
   showImgs: boolean[] = [false,false,false,false,false,false,false,false,false,false];
   overlay:boolean = false;
 
-  public renderer: Renderer2 | null = null;
-
-
+  private renderer: Renderer2 | null = null;
+  
   constructor(renderer: Renderer2| null) { 
     this.renderer = renderer;
   }
-
   show_MenuIcon() {
     this.showMenuIcon = true;
   }
@@ -56,7 +54,6 @@ export class VisibilityService {
       }
 
     }
-    
   }
 
   scrollUp(){

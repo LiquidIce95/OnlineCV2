@@ -12,6 +12,7 @@ import { LinksComponent } from './links/links.component';
 import { DotSimulationComponent } from './dot-simulation/dot-simulation.component';
 import { FreelancingComponent } from './freelancing/freelancing.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { FreelancingComponent } from './freelancing/freelancing.component';
     SkillsComponent,
     LinksComponent,
     DotSimulationComponent,
-    FreelancingComponent
+    FreelancingComponent,
   ],
   imports: [
     BrowserModule,
