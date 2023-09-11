@@ -1,4 +1,4 @@
-import { Injectable,ElementRef, Renderer2 } from '@angular/core';
+import { Injectable, Renderer2 } from '@angular/core';
 
 @Injectable()
 export class VisibilityService {
@@ -8,15 +8,11 @@ export class VisibilityService {
   showImgs: boolean[] = [false,false,false,false,false,false,false,false,false,false];
   overlay:boolean = false;
 
-  private el: ElementRef | null = null;
-  private renderer: Renderer2 | null = null;
+  public renderer: Renderer2 | null = null;
 
-  private scrollX: number = 0;
-  private scrollY: number = 0;
 
-  storeScrollPosition(): void {
-    this.scrollX = window.scrollX;
-    this.scrollY = window.scrollY;
+  constructor(renderer: Renderer2| null) { 
+    this.renderer = renderer;
   }
 
   show_MenuIcon() {
@@ -46,29 +42,21 @@ export class VisibilityService {
     if(this.showImgs[img] == true){
       this.showImgs[img] = false;
       this.overlay = false;
-
-      window.scrollTo({
-        top: this.scrollY,
-        left: this.scrollX,
-        behavior: 'smooth' // optional
-      });
-
+      if(this.renderer){
+        console.log("overflow vis");
+        this.renderer.removeStyle(document.body, 'overflow');
+      }
     }
     else{
       this.showImgs[img] = true;
       this.overlay = true;
-      this.storeScrollPosition();
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth' // optional
-      });
-    }
-    if (this.el && this.renderer){
-      const overlayElement = this.el.nativeElement.querySelector('.overlay');
-      this.renderer.setStyle(overlayElement, 'heigth', '100vh');
+      if(this.renderer){
+        console.log("overflow hidden");
+        this.renderer.setStyle(document.body, 'overflow', 'hidden');
+      }
 
     }
+    
   }
 
   scrollUp(){

@@ -34,10 +34,6 @@ import { trigger, state, style, animate, transition,sequence } from '@angular/an
 
 })
 export class EducationComponent {
-
-  imageLoaded: boolean = false;
-  imageVisible: boolean = false;
-
-  constructor(private el: ElementRef, private renderer: Renderer2,public visibilityService: VisibilityService) {}
+  constructor(public visibilityService: VisibilityService) {}
 
 }
