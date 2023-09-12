@@ -8,4 +8,4 @@ Overlay when clicking table header (next to eye symbol) to preview attachment fr
 
 Beautiful Design and user experience, top and down buttons (scroll to start and end of application) , nice animations.
 
-TODO: Mobile Version
+TODO: improve Mobile Version
