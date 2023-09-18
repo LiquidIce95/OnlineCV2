@@ -1,5 +1,4 @@
-<div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
-    click on the picture to exit preview
+<div (click)="visibilityService.showImage(-1)" class="overlay" *ngIf="visibilityService.overlay" @growShrink>
     <img (click)="visibilityService.showImage(0)" src='./assets/experience/datamanag.png' *ngIf="visibilityService.showImgs[0]">
     
     <img (click)="visibilityService.showImage(1)" src='./assets/experience/LeutnantUrkunde.png' *ngIf="visibilityService.showImgs[1]">
@@ -11,7 +10,7 @@
     <img (click)="visibilityService.showImage(2)" src='./assets/experience/Lehr2.png' *ngIf="visibilityService.showImgs[2]">
     <img (click)="visibilityService.showImage(2)" src='./assets/experience/SIZ.png' *ngIf="visibilityService.showImgs[2]">
     <div class="closeIcon" (click)="visibilityService.showImage(-1)">
-        🗙
+        ❌
     </div>
 </div>
 
@@ -26,33 +25,33 @@
         <table>
             <tr>
                 <th>11.2022 - Currently</th> 
-                <th>System Administrator / IT Assistant</th>
+                <th>system administrator / IT assistant</th>
             </tr>
             <tr>
                 <td></td>
-                <td>Omnicommediagroup CH</td>
+                <td>omnicommediagroup CH</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Automation of processes</td>
+                <td>-automation of processes</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Server Administration</td>
+                <td>-server administration</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Employee IT-Management</td>
+                <td>-employee IT-management</td>
             </tr>
             <tr>
                 <th>01.2020 - 08.2020</th>
                 <th (click)="visibilityService.showImage(0)">
-                    Civil Service: Data management 👁‍🗨
+                    civil cervice: data management 👁
                 </th>
             </tr>
             <tr>
                 <td></td>
-                <td>Entomological Collection ETH Zurich</td>
+                <td>entomological collection ETH zurich</td>
             </tr>
             <tr>
                 <td></td>
@@ -60,19 +59,19 @@
             </tr>
             <tr>
                 <th>11.2015 - 02.2017</th>
-                <th (click)="visibilityService.showImage(1)">Lieutenant CH Army 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(1)">lieutenant CH army 👁</th>
             </tr>
             <tr>
                 <td></td>
-                <td>-Deployment at World Economic Forum 2017</td>
+                <td>-deployment at World Economic Forum 2017</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Leading and management of 30 people</td>
+                <td>-leading and management of 30 people</td>
             </tr>
             <tr>
                 <th>08.2012 - 08.2015</th>
-                <th (click)="visibilityService.showImage(2)">Commercial Apprenticeship EFZ E- Profile 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(2)">commercial apprenticeship EFZ E-profile 👁</th>
             </tr>
             <tr>
                 <td></td>

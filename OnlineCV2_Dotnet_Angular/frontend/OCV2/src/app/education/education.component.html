@@ -1,5 +1,4 @@
-<div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
-    click on the picture to exit preview
+<div (click)="visibilityService.showImage(-1)" class="overlay" *ngIf="visibilityService.overlay" @growShrink>
     <img (click)="visibilityService.showImage(0)" src='./assets/education/FS23.png' *ngIf="visibilityService.showImgs[0]">
     <img (click)="visibilityService.showImage(0)" src='./assets/education/HS23tr.png' *ngIf="visibilityService.showImgs[0]">
     <img (click)="visibilityService.showImage(0)" src='./assets/education/HS23tr2.png' *ngIf="visibilityService.showImgs[0]">
@@ -13,7 +12,7 @@
 
     <img (click)="visibilityService.showImage(4)" src='./assets/education/KV.png' *ngIf="visibilityService.showImgs[4]">
     <div class="closeIcon" (click)="visibilityService.showImage(-1)">
-        🗙
+        ❌
     </div>
 </div>
 
@@ -28,45 +27,45 @@
             <tr>
                 <th>2022-2025</th>
                 <th (click)="visibilityService.showImage(0)">
-                    BsC Mathematics/ Computer Science (120/60) on English 👁‍🗨
+                    BSc mathematics/ computer science (120/60) on english 👁
                 </th>
             </tr>
             <tr>
                 <td></td>
-                <td>UZH university of Zurich</td>
+                <td>UZH University of Zurich</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Software Engineering</td>
+                <td>-software engineering</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Statistics</td>
+                <td>-statistics</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Artificiale Intelligence</td>
+                <td>-artificial intelligence</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Data Science</td>
+                <td>-data science</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Algorithms</td>
+                <td>-algorithms</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Computer Networks</td>
+                <td>-computer networks</td>
             </tr>
             <tr>
                 <td></td>
-                <td>-Cryptography</td>
+                <td>-cryptography</td>
             </tr>
             <tr></tr>
             <tr>
                 <th>2020 - 2022</th>
-                <th (click)="visibilityService.showImage(1)">BsC Mathematics / Computer Science 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(1)">BSc mathematics / computer science 👁</th>
             </tr>
              <tr>
                 <td></td>
@@ -80,11 +79,11 @@
            
             <tr>
                 <td></td>
-                <td>-Cancelled</td>
+                <td>-cancelled</td>
             </tr>
             <tr>
                 <th>08.2017 - 08.2018</th>
-                <th (click)="visibilityService.showImage(2)">Passerellenlehrgang 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(2)">passerellenlehrgang 👁</th>
             </tr>
             <tr>
                 <td></td>
@@ -96,11 +95,11 @@
             </tr>
             <tr>
                 <th>08.2017 - 08.2018</th>
-                <th (click)="visibilityService.showImage(3)">Berufsmatura 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(3)">berufsmatura 👁</th>
             </tr>
             <tr>
                 <td></td>
-                <td>KV Reinach in Lenzburg</td>
+                <td>KV reinach in Lenzburg</td>
             </tr>
             <tr>
                 <td></td>
@@ -108,7 +107,7 @@
             </tr>
             <tr>
                 <th>08.2012 - 08.2015</th>
-                <th (click)="visibilityService.showImage(4)">Commercial Apprenticeship EFZ E-Profile 👁‍🗨</th>
+                <th (click)="visibilityService.showImage(4)">commercial apprenticeship EFZ E-profile 👁</th>
             </tr>
             <tr>
                 <td></td>

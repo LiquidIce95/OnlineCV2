@@ -99,7 +99,7 @@
     
     }
     th:not(:last-child), td:not(:last-child) {
-        border-right: 3px solid black;
+        border-right: 0.15vw solid black;
     }
     
     
@@ -201,7 +201,7 @@
     
     }
     th:not(:last-child), td:not(:last-child) {
-        border-right: 3px solid black;
+        border-right: 0.15vw solid black;
     }
     
     

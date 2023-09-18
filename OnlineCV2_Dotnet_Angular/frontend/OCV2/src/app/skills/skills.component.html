@@ -1,10 +1,9 @@
-<div class="overlay" *ngIf="visibilityService.overlay" @growShrink>
-    click on the picture to exit preview
+<div (click)="visibilityService.showImage(-1)" class="overlay" *ngIf="visibilityService.overlay" @growShrink>
     <img (click)="visibilityService.showImage(0)" src='./assets/languages/ENB2.png' *ngIf="visibilityService.showImgs[0]">
     
     <img (click)="visibilityService.showImage(1)" src='./assets/languages/FranzB2.png' *ngIf="visibilityService.showImgs[1]">
     <div class="closeIcon" (click)="visibilityService.showImage(-1)">
-        🗙
+        ❌
     </div>
 </div>
 
@@ -196,7 +195,7 @@
                 </td>
             </tr>
             <tr>
-                <td><div class="clickable" (click)="visibilityService.showImage(0)">English B2 👁‍🗨</div></td>
+                <td><div class="clickable" (click)="visibilityService.showImage(0)">English B2 👁</div></td>
                 <td>currently</td>
                 <td>
                     <div class="progress-bar very-good">
@@ -205,7 +204,7 @@
                 </td>
             </tr>
             <tr>
-                <td><div class="clickable" (click)="visibilityService.showImage(1)">French B2 👁‍🗨</div></td>
+                <td><div class="clickable" (click)="visibilityService.showImage(1)">French B2 👁</div></td>
                 <td>2018</td>
                 <td>
                     <div class="progress-bar good">

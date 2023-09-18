@@ -1,5 +1,7 @@
 canvas {
     position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
     top: 0;
     left: 0;
     z-index: -1;  /* Place canvas behind other content */
